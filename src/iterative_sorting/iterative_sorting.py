@@ -2,12 +2,14 @@
 def selection_sort(arr):
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
-        cur_index = i
-        smallest_index = cur_index
+        # cur_index = i
+        # smallest_index = cur_index
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
         # Your code here
-
+        for j in range(i + 1, len(arr)):
+            if arr[j] < arr[i]:
+                arr[i], arr[j] = arr[j], arr[i]
 
         # TO-DO: swap
         # Your code here
@@ -18,9 +20,30 @@ def selection_sort(arr):
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
     # Your code here
-
+    keep_swapping = True
+    while keep_swapping:
+        keep_swapping = False
+        for i in range(0, len(arr)-1):
+            if arr[i] > arr[i+1]:
+                arr[i], arr[i+1] = arr[i+1], arr[i]
+                keep_swapping = True
 
     return arr
+
+
+# def bubble_sort(arr):
+#     le = len(arr)
+#     # Loop through all indices
+#     for i in range(le):
+#         # len - i because we are "moving" through the list
+#         # i.e. if le = 6 and we are at index 4 only 2 items remain
+#         # then -1 because x+1 on last element will be out of range
+#         for x in range(le - i - 1):
+#             # If left element is greater than right element
+#             if arr[x] > arr[x+1]:
+#                 # swap
+#                 arr[x], arr[x+1] = arr[x+1], arr[x]
+#     return arr
 
 '''
 STRETCH: implement the Counting Sort function below
@@ -39,8 +62,18 @@ buckets.
 
 What is the time and space complexity of the counting sort algorithm?
 '''
-def counting_sort(arr, maximum=None):
-    # Your code here
 
 
-    return arr
+# def counting_sort(arr, maximum=None):
+#     if len(arr) <= 1:
+#         return arr
+#     else:
+#         count = {}
+#         for i in range(0, len(arr)):
+#             count[arr[i]] += 1
+#         sorted = []
+#         for i in count:
+#             for j in range(0, count[i]):
+#                 sorted.push.
+
+#     return arr
